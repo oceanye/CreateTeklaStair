@@ -1,0 +1,13 @@
+C:\Users\Administrator\source\repos\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.dll
+C:\Users\Administrator\source\repos\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.pdb
+C:\Users\Administrator\source\repos\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.dll
+C:\Users\Administrator\source\repos\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.pdb
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.dll
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.pdb
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CoreCompileInputs.cache
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.dll
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.pdb
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\System.Data.SQLite.dll
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CopyComplete
+Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.AssemblyReference.cache

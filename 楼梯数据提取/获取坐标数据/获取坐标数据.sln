@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "获取坐标数据", "获取坐标数据\获取坐标数据.csproj", "{C6CBE811-EF20-4C14-A7B2-55ECC0A58C0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6CBE811-EF20-4C14-A7B2-55ECC0A58C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CBE811-EF20-4C14-A7B2-55ECC0A58C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CBE811-EF20-4C14-A7B2-55ECC0A58C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CBE811-EF20-4C14-A7B2-55ECC0A58C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34F7F3A2-0046-4C60-B1B0-3D851167F280}
+	EndGlobalSection
+EndGlobal
