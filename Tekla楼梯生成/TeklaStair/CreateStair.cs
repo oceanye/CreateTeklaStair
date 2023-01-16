@@ -151,66 +151,37 @@ namespace TeklaStair
 
                 for (int x = 0; x < Platetable.Rows.Count; x++)
                 {
-                    string point_info = Platetable.Rows[x].ItemArray[2].ToString();
+                    string point_info = Platetable.Rows[x].ItemArray[2].ToString().Replace('(', ' ').Replace(')', ' ');
                     string plate_thick = Platetable.Rows[x].ItemArray[3].ToString();
 
                     int np = Convert.ToInt32(point_info.Split('*')[0]);
 
 
-                    if (np == 3)
-                    {
-                        string p1 = point_info.Split('*')[1].Replace('(',' ').Replace(')',' ');
-                        string p2 = point_info.Split('*')[2].Replace('(', ' ').Replace(')', ' ');
-                        string p3 = point_info.Split('*')[3].Replace('(', ' ').Replace(')', ' ');
-                        Tekla.Structures.Geometry3d.Point Pt1 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p1.Split(',')[0]), Convert.ToDouble(p1.Split(',')[1]), Convert.ToDouble(p1.Split(',')[2]) );
-                        Tekla.Structures.Geometry3d.Point Pt2 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p2.Split(',')[0]), Convert.ToDouble(p2.Split(',')[1]), Convert.ToDouble(p2.Split(',')[2]) );
-                        Tekla.Structures.Geometry3d.Point Pt3 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p3.Split(',')[0]), Convert.ToDouble(p3.Split(',')[1]), Convert.ToDouble(p3.Split(',')[2]) );
-                        ContourPoint point = new ContourPoint(Pt1, null);
-                        ContourPoint point1 = new ContourPoint(Pt2, null);
-                        ContourPoint point2 = new ContourPoint(Pt3, null);
 
-                        ContourPlate CP = new ContourPlate();
-                        CP.AddContourPoint(point);
-                        CP.AddContourPoint(point1);
-                        CP.AddContourPoint(point2);
 
-                        //CP.Finish = "FOO";
-                        CP.Profile.ProfileString = "PL" + plate_thick;
-                        CP.Material.MaterialString = "Q235B";
-                        CP.Insert();
-                        myModelPlate.CommitChanges();
-                        //CP.Delete;
+                        List<string> point_List = new List<string>();
+                        point_List = point_info.Split('*').ToList();
+                        if (Convert.ToDouble(point_List[0]) > 2)
+                        {
+                            point_List.RemoveAt(0);
+                            ContourPlate CP = new ContourPlate();
 
-                    }
-                    else if (np==4)
-                    {
-                        string p1 = point_info.Split('*')[1].Replace('(', ' ').Replace(')', ' ');
-                        string p2 = point_info.Split('*')[2].Replace('(', ' ').Replace(')', ' ');
-                        string p3 = point_info.Split('*')[3].Replace('(', ' ').Replace(')', ' ');
-                        string p4 = point_info.Split('*')[4].Replace('(', ' ').Replace(')', ' ');
-                        Tekla.Structures.Geometry3d.Point Pt1 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p1.Split(',')[0]), Convert.ToDouble(p1.Split(',')[1]), Convert.ToDouble(p1.Split(',')[2]));
-                        Tekla.Structures.Geometry3d.Point Pt2 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p2.Split(',')[0]), Convert.ToDouble(p2.Split(',')[1]), Convert.ToDouble(p2.Split(',')[2]));
-                        Tekla.Structures.Geometry3d.Point Pt3 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p3.Split(',')[0]), Convert.ToDouble(p3.Split(',')[1]), Convert.ToDouble(p3.Split(',')[2]));
-                        Tekla.Structures.Geometry3d.Point Pt4 = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(p4.Split(',')[0]), Convert.ToDouble(p4.Split(',')[1]), Convert.ToDouble(p4.Split(',')[2]));
-                        
-                        ContourPoint point = new ContourPoint(Pt1, null);
-                        ContourPoint point1 = new ContourPoint(Pt2, null);
-                        ContourPoint point2 = new ContourPoint(Pt3, null);
-                        ContourPoint point3 = new ContourPoint(Pt4, null);
 
-                        ContourPlate CP = new ContourPlate();
-                        CP.AddContourPoint(point);
-                        CP.AddContourPoint(point1);
-                        CP.AddContourPoint(point2);
-                        CP.AddContourPoint(point3);
+                            foreach (string point_i in point_List)
+                            {
+                                Tekla.Structures.Geometry3d.Point Pt_i = new Tekla.Structures.Geometry3d.Point(Convert.ToDouble(point_i.Split(',')[0]), Convert.ToDouble(point_i.Split(',')[1]), Convert.ToDouble(point_i.Split(',')[2]));
+                                ContourPoint point_CP_i = new ContourPoint(Pt_i, null);
+                                CP.AddContourPoint(point_CP_i);
 
-                        //CP.Finish = "FOO";
-                        CP.Profile.ProfileString = "PL" + plate_thick;
-                        CP.Material.MaterialString = "Q235B";
+                            }
 
-                        CP.Insert();
-                        myModelPlate.CommitChanges();
-                    }
+                            CP.Profile.ProfileString = "PL" + plate_thick;
+                            CP.Material.MaterialString = "Q235B";
+                            CP.Insert();
+                            myModelPlate.CommitChanges();
+                        }
+
+                    
                     
                 }
                     

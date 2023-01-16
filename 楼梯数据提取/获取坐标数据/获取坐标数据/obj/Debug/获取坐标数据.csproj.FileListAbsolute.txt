@@ -11,3 +11,80 @@ Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获�
 Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\System.Data.SQLite.dll
 Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CopyComplete
 Y:\数字化课题\Revit 二次开发\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.AssemblyReference.cache
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\获取坐标数据.pdb
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\System.Data.SQLite.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CoreCompileInputs.cache
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.CopyComplete
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.pdb
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAPIUI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAPIFoundation.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\PersistenceDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\UtilityAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\APIDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\GraphicsAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ElementGroupDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\EssentialsDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\GeomUtilAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\FamilyDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\DetailDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\CurtainGridFamilyDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ArrayElemsDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\EnergyAnalysisDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\BuildingSystemsDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\HostObjDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RoomAreaPlanDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\SiteDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\SculptingDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\StructuralDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\InterfaceAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\InterfaceUtilAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RebarDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\StructuralAnalysisDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\MassingDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\AssemblyDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\DPartDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\NumberingDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\PointCloudAccessAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\StairRampDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\AnalysisAppsDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\MaterialDBAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\DBManagedServices.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\AdWindows.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAddInUtility.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\APIInterop.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\UIFramework.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\AddInManager.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitUIAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\BuildingSystemsUIAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\DesktopMFCAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\APIUIAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitMFCAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\EssentialsUIAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\EnergyAnalysisUtilitiesAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\DetailUIAPI.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\UIFrameworkServices.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ManagedMC3.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAPI.xml
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\RevitAPIUI.xml
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\cs-CZ\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\de-DE\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\en-GB\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\en-US\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\es-ES\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\fr-FR\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\it-IT\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ja-JP\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ko-KR\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\pl-PL\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\pt-BR\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\ru-RU\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\zh-CN\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\zh-TW\AdWindows.resources.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.Form1.resources
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\楼梯数据提取\获取坐标数据\获取坐标数据\obj\Debug\获取坐标数据.csproj.GenerateResource.cache
