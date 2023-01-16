@@ -28,10 +28,10 @@ Y:\数字化课题\Revit 二次开发\Tekla楼梯生成\TeklaStair\bin\Debug\Tek
 Y:\数字化课题\Revit 二次开发\Tekla楼梯生成\TeklaStair\bin\Debug\Tekla.Technology.Serialization.dll
 Y:\数字化课题\Revit 二次开发\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.CopyComplete
 Y:\数字化课题\Revit 二次开发\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.AssemblyReference.cache
-C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\TeklaStair.exe.config
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\TeklaStair.exe
-C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\TeklaStair.pdb
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\System.Data.SQLite.dll
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\TeklaStair.exe.config
+C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\TeklaStair.pdb
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\Tekla.BIM.Geometry.dll
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\Tekla.BIM.Utilities.dll
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\bin\Debug\Tekla.Common.Geometry.dll
@@ -57,4 +57,3 @@ C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.CopyComplete
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.exe
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.pdb
-C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.AssemblyReference.cache
