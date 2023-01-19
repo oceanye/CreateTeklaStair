@@ -158,22 +158,20 @@ namespace TeklaStair
                     //int np = Convert.ToInt32(point_info.Split('*')[0]);
 
 
-                    //Beam Beam = new Beam(new Point(5000, 7000, 0), new Point(6000, 7000, 0));
-                    //Beam.Profile.ProfileString = "250*250";
-                    //Beam.Material.MaterialString = "K40-1";
-                    //Beam.Finish = "PAINT";
-                    //Beam.Insert();
 
-                    //double MinimumY = Beam.GetSolid().MinimumPoint.Y;
-                    //double MinimumX = Beam.GetSolid().MinimumPoint.X;
-                    //double MinimumZ = Beam.GetSolid().MinimumPoint.Z;
-                    //double MaximumY = Beam.GetSolid().MaximumPoint.Y;
-                    //double MaximumX = Beam.GetSolid().MaximumPoint.X;
-                    //double MaximumZ = Beam.GetSolid().MaximumPoint.Z;
-                    if(plate_name == "构造钢筋")
-                        Generate_Rebar(point_info, plate_thick,myModelPlate);
+
+                    if (plate_name == "构造钢筋")
+                    {
+                        Generate_Rebar(point_info, plate_thick, myModelPlate);
+                    }
+                    else if (plate_name == "钢梁中心线")
+                    {
+                        Generate_Beam(point_info,myModelPlate);
+                    }
                     else
+                    {
                         Generate_Plate(point_info, plate_thick, myModelPlate);
+                    }
                 }
                     
 
@@ -264,7 +262,34 @@ namespace TeklaStair
             }
         }
 
-        
+        private static void Generate_Beam(string point_info,  Model myModelPlate)
+        {
+            string ps = point_info.Split('*')[1];
+            string pe = point_info.Split('*')[2];
+
+            Point P1 = new Point(new Point(Convert.ToDouble(ps.Split(',')[0]), Convert.ToDouble(ps.Split(',')[1]),
+                Convert.ToDouble(ps.Split(',')[2])));
+            Point P2 = new Point(new Point(Convert.ToDouble(pe.Split(',')[0]), Convert.ToDouble(pe.Split(',')[1]),
+                Convert.ToDouble(pe.Split(',')[2])));
+
+            Beam Beam = new Beam(P1, P2);
+            Beam.Profile.ProfileString = "H175*90*5*8";//"300-6-10*200";
+            Beam.Material.MaterialString = "Q345B";
+            //Beam.Finish = "PAINT";
+            Beam.Insert();
+            //SingleRebar.OnPlaneOffsets = new ArrayList();
+            //SingleRebar.OnPlaneOffsets.Add(25.00);
+            //SingleRebar.StartHook.Angle = -90;
+            //SingleRebar.StartHook.Length = 10;
+            //SingleRebar.StartHook.Radius = 10;
+            //SingleRebar.StartHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
+            //SingleRebar.EndHook.Angle = 90;
+            //SingleRebar.EndHook.Length = 10;
+            //SingleRebar.EndHook.Radius = 10;
+            //SingleRebar.EndHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
+
+            myModelPlate.CommitChanges();
+        }
 
         /// <summary>
         /// 获得数据库数据

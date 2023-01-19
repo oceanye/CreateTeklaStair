@@ -65,7 +65,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataToSqlitePlate.cs" />
+    <Compile Include="DataToSqlite_Stair.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
