@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeklaStair", "TeklaStair.csproj", "{E89367DA-051A-4114-8A33-82586EDD4724}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer_CreateTeklaStair", "..\Installer_CreateTeklaStair\Installer_CreateTeklaStair.vdproj", "{B8924B59-2245-4024-AB03-AF6552296ED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{E89367DA-051A-4114-8A33-82586EDD4724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E89367DA-051A-4114-8A33-82586EDD4724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E89367DA-051A-4114-8A33-82586EDD4724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8924B59-2245-4024-AB03-AF6552296ED7}.Debug|Any CPU.ActiveCfg = Debug
+		{B8924B59-2245-4024-AB03-AF6552296ED7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
