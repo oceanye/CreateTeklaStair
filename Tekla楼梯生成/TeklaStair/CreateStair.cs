@@ -16,7 +16,9 @@ using System.Diagnostics;
 using System.Threading;
 using Tekla.Structures.Model;
 using System.Collections;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
+using System.Security.Cryptography;
 using Tekla.Structures.Geometry3d;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -168,6 +170,10 @@ namespace TeklaStair
                     {
                         Generate_Beam(point_info,myModelPlate);
                     }
+                    else if (plate_name == "承接钢板")
+                    {
+                        Generate_fold_Plate(point_info, plate_thick, myModelPlate);
+                    }
                     else
                     {
                         Generate_Plate(point_info, plate_thick, myModelPlate);
@@ -262,6 +268,67 @@ namespace TeklaStair
             }
         }
 
+
+        private static void Generate_fold_Plate(string point_info,string plate_thick, Model myModelPlate)
+        {
+            string p_len = point_info.Split('*')[0];
+            string L1 = point_info.Split('*')[1];
+            string L2 = point_info.Split('*')[2];
+
+
+            L1 = L1.Substring(1, L1.Length-2);
+            L1.Replace(" , ", "@");
+            //L2 = L2.Substring(1, L2.Length-2);
+            
+            
+            string P1_s = L1.Split(' ')[0];
+            string P2_s = L1.Split(' ')[2];
+            string P3_s = L1.Split(' ')[4];
+           
+
+            Point P1 = new Point(new Point(Convert.ToDouble(P1_s.Split(',')[0]), Convert.ToDouble(P1_s.Split(',')[1]),
+                Convert.ToDouble(P1_s.Split(',')[2])));
+            Point P2 = new Point(new Point(Convert.ToDouble(P2_s.Split(',')[0]), Convert.ToDouble(P2_s.Split(',')[1]),
+                Convert.ToDouble(P2_s.Split(',')[2])));
+            Point P3 = new Point(new Point(Convert.ToDouble(P3_s.Split(',')[0]), Convert.ToDouble(P3_s.Split(',')[1]),
+                Convert.ToDouble(P3_s.Split(',')[2])));
+
+
+            ContourPoint point1 = new ContourPoint(P1,null);
+            ContourPoint point2 = new ContourPoint(P2, null);
+            ContourPoint point3 = new ContourPoint(P3,null);
+
+            PolyBeam PolyBeam = new PolyBeam();
+
+            PolyBeam.AddContourPoint(point1);
+            PolyBeam.AddContourPoint(point2);
+            PolyBeam.AddContourPoint(point3);
+
+            PolyBeam.Profile.ProfileString = "PL"+p_len+"*"+plate_thick;
+            PolyBeam.Material.MaterialString= "Q235B";
+            PolyBeam.Position.Plane = Position.PlaneEnum.LEFT;
+            PolyBeam.Position.Rotation= Position.RotationEnum.BACK;
+            PolyBeam.Position.Depth = Position.DepthEnum.FRONT;
+            PolyBeam.Finish = "PAINT";
+            bool Result = false;
+            Result = PolyBeam.Insert();
+
+
+            // 创建一个新的PolyLine对象，并将其点位置设置为myPoints列表
+
+            //SingleRebar.OnPlaneOffsets = new ArrayList();
+            //SingleRebar.OnPlaneOffsets.Add(25.00);
+            //SingleRebar.StartHook.Angle = -90;
+            //SingleRebar.StartHook.Length = 10;
+            //SingleRebar.StartHook.Radius = 10;
+            //SingleRebar.StartHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
+            //SingleRebar.EndHook.Angle = 90;
+            //SingleRebar.EndHook.Length = 10;
+            //SingleRebar.EndHook.Radius = 10;
+            //SingleRebar.EndHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
+
+            myModelPlate.CommitChanges();
+        }
         private static void Generate_Beam(string point_info,  Model myModelPlate)
         {
             string ps = point_info.Split('*')[1];
