@@ -22,6 +22,7 @@ using System.Security.Cryptography;
 using Tekla.Structures.Geometry3d;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Point = Tekla.Structures.Geometry3d.Point;
 
 namespace TeklaStair
 {
@@ -29,12 +30,55 @@ namespace TeklaStair
     {
         public CreateStair()
         {
+            
             InitializeComponent();
+            Cmb_stair_type.SelectedIndex =0 ;
+            Cmb_Section.DataSource = GetHProfiles();
+            Cmb_Section.SelectedItem = "HN300*150*6.5*9";
+
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public static List<string> GetHProfiles()
+        {
+            List<Profile> hProfiles = new List<Profile>();
+            //LibraryProfileItem correntProfileItem = null;
+            //List<LibraryProfileItem> profileL = new List<LibraryProfileItem>();
+            List<String> profileL_Name = new List<string>();
+            CatalogHandler CatalogHandler = new CatalogHandler();
+            ProfileItemEnumerator ProfileItemEnumerator = CatalogHandler.GetLibraryProfileItems();
+
+
+            while (ProfileItemEnumerator.MoveNext())
+            {
+                LibraryProfileItem LibraryProfileItem = ProfileItemEnumerator.Current as LibraryProfileItem;
+
+                string section_name = LibraryProfileItem.ProfileName;
+                if (section_name.StartsWith("H"))
+                    profileL_Name.Add(section_name); //将选中构件的截面汇入截面库profileL
+
+            }
+
+
+            //for (int j = 0; j < profileL.Count; j++)
+            //{
+            //    if (profileL[j].ProfileName.Contains(profileName))
+            //    {
+            //        correntProfileItem = profileL[j];//在截面库profileL中历遍寻找当截面的信息
+            //    }
+            //}
+            return profileL_Name;
+
+
+        }
+
+
+        public void button1_Click(object sender, EventArgs e)
         {
             string DbPath = @" Y:\数字化课题\数据库\RevitData.db";
+            string section_name_string = Cmb_Section.SelectedItem.ToString();
+            
             using (SQLiteConnection conn = new SQLiteConnection("Data Source = " + DbPath))
             {
                 conn.Open();
@@ -168,11 +212,14 @@ namespace TeklaStair
                     }
                     else if (plate_name == "钢梁中心线")
                     {
-                        Generate_Beam(point_info,myModelPlate);
+                        Generate_Beam(point_info, section_name_string,myModelPlate);
                     }
                     else if (plate_name == "承接钢板")
                     {
-                        Generate_fold_Plate(point_info, plate_thick, myModelPlate);
+                        if(Convert.ToDouble(point_info.Split('*')[0])>100)
+                            Generate_fold_Plate(point_info, plate_thick, myModelPlate);
+                        else
+                            Generate_Plate(point_info, plate_thick, myModelPlate);
                     }
                     else
                     {
@@ -272,31 +319,34 @@ namespace TeklaStair
         private static void Generate_fold_Plate(string point_info,string plate_thick, Model myModelPlate)
         {
             string p_len = point_info.Split('*')[0];
-            string L1 = point_info.Split('*')[1];
-            string L2 = point_info.Split('*')[2];
 
+            List < string >L_s= point_info.Split('*').ToList();
 
-            L1 = L1.Substring(1, L1.Length-2);
-            L1.Replace(" , ", "@");
+            string L1 = L_s[1];
+            string L2 = L_s[2];
+
+            
+            L1 = L1.Substring(1, L1.Length-2).Replace(" , ", "@");
             //L2 = L2.Substring(1, L2.Length-2);
             
             
-            string P1_s = L1.Split(' ')[0];
-            string P2_s = L1.Split(' ')[2];
-            string P3_s = L1.Split(' ')[4];
-           
 
-            Point P1 = new Point(new Point(Convert.ToDouble(P1_s.Split(',')[0]), Convert.ToDouble(P1_s.Split(',')[1]),
-                Convert.ToDouble(P1_s.Split(',')[2])));
-            Point P2 = new Point(new Point(Convert.ToDouble(P2_s.Split(',')[0]), Convert.ToDouble(P2_s.Split(',')[1]),
-                Convert.ToDouble(P2_s.Split(',')[2])));
-            Point P3 = new Point(new Point(Convert.ToDouble(P3_s.Split(',')[0]), Convert.ToDouble(P3_s.Split(',')[1]),
-                Convert.ToDouble(P3_s.Split(',')[2])));
+            List<string> P_s = L1.Split('@').ToList();
+            List<Point> PXYZ_s = new List<Point>();
+
+            for (int i = 0; i < P_s.Count; i++)
+            {
+                double x_coord = Convert.ToDouble(P_s[i].Split(',')[0]);
+                double y_coord = Convert.ToDouble(P_s[i].Split(',')[1]);
+                double z_coord = Convert.ToDouble(P_s[i].Split(',')[2]);
+                PXYZ_s.Add(new Point(x_coord, y_coord, z_coord));
+            }
 
 
-            ContourPoint point1 = new ContourPoint(P1,null);
-            ContourPoint point2 = new ContourPoint(P2, null);
-            ContourPoint point3 = new ContourPoint(P3,null);
+
+            ContourPoint point1 = new ContourPoint(PXYZ_s[0],null);
+            ContourPoint point2 = new ContourPoint(PXYZ_s[1], null);
+            ContourPoint point3 = new ContourPoint(PXYZ_s[2], null);
 
             PolyBeam PolyBeam = new PolyBeam();
 
@@ -314,22 +364,10 @@ namespace TeklaStair
             Result = PolyBeam.Insert();
 
 
-            // 创建一个新的PolyLine对象，并将其点位置设置为myPoints列表
-
-            //SingleRebar.OnPlaneOffsets = new ArrayList();
-            //SingleRebar.OnPlaneOffsets.Add(25.00);
-            //SingleRebar.StartHook.Angle = -90;
-            //SingleRebar.StartHook.Length = 10;
-            //SingleRebar.StartHook.Radius = 10;
-            //SingleRebar.StartHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
-            //SingleRebar.EndHook.Angle = 90;
-            //SingleRebar.EndHook.Length = 10;
-            //SingleRebar.EndHook.Radius = 10;
-            //SingleRebar.EndHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
 
             myModelPlate.CommitChanges();
         }
-        private static void Generate_Beam(string point_info,  Model myModelPlate)
+        private static void Generate_Beam(string point_info,  string section_name_string, Model myModelPlate)
         {
             string ps = point_info.Split('*')[1];
             string pe = point_info.Split('*')[2];
@@ -340,7 +378,10 @@ namespace TeklaStair
                 Convert.ToDouble(pe.Split(',')[2])));
 
             Beam Beam = new Beam(P1, P2);
-            Beam.Profile.ProfileString = "H175*90*5*8";//"300-6-10*200";
+            Beam.Profile.ProfileString = section_name_string;//"300-6-10*200";
+
+
+
             Beam.Material.MaterialString = "Q345B";
             //Beam.Finish = "PAINT";
             Beam.Insert();
@@ -378,5 +419,9 @@ namespace TeklaStair
             return table;
         }
 
+        private void Cmb_stair_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

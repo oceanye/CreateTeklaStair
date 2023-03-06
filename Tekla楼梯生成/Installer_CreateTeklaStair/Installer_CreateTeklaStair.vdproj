@@ -556,6 +556,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -1324,15 +1332,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CreateTeklaStair"
-        "ProductCode" = "8:{17E02F39-EF1E-405D-8EB3-BE43C969E0ED}"
-        "PackageCode" = "8:{8C09CABE-8E29-456D-AF71-01A6B75427F7}"
+        "ProductCode" = "8:{2C8251CB-3AFD-483B-9FE7-236CDBE771E5}"
+        "PackageCode" = "8:{F4CC6258-6CAC-415A-9563-5CC6360F9872}"
         "UpgradeCode" = "8:{1DE34E66-B9D6-4CC4-AB82-9FD3C9A22BBF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.0.0"
         "Manufacturer" = "8:JG_Steel"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

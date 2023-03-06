@@ -57,4 +57,3 @@ C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.CopyComplete
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.exe
 C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.pdb
-C:\Users\zjlz1162\source\repos\CreateTeklaStair\Tekla楼梯生成\TeklaStair\obj\Debug\TeklaStair.csproj.AssemblyReference.cache
