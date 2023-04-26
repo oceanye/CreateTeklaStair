@@ -23,18 +23,30 @@ using Tekla.Structures.Geometry3d;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Point = Tekla.Structures.Geometry3d.Point;
+using System.Drawing;
 
 namespace TeklaStair
 {
     public partial class CreateStair : Form
     {
+        List<string> SectionList = GetHProfiles();
+
+
         public CreateStair()
         {
             
             InitializeComponent();
             Cmb_stair_type.SelectedIndex =0 ;
-            Cmb_Section.DataSource = GetHProfiles();
-            Cmb_Section.SelectedItem = "HN300*150*6.5*9";
+            
+            Cmb_Section.DataSource = SectionList.Where(s => s.StartsWith("H")).ToList();
+            
+            Cmb_Section.SelectedIndex=0;
+
+            List<string> Section_type = new List<string> { "H型钢", "C型钢", "F矩形钢管" };
+            Cmb_Section_type.DataSource = Section_type;
+            Cmb_Section_type.SelectedIndex = 0;
+
+
 
 
 
@@ -55,7 +67,7 @@ namespace TeklaStair
                 LibraryProfileItem LibraryProfileItem = ProfileItemEnumerator.Current as LibraryProfileItem;
 
                 string section_name = LibraryProfileItem.ProfileName;
-                if (section_name.StartsWith("H"))
+                if (section_name.StartsWith("H") || section_name.StartsWith("C") || section_name.StartsWith("F"))
                     profileL_Name.Add(section_name); //将选中构件的截面汇入截面库profileL
 
             }
@@ -76,10 +88,18 @@ namespace TeklaStair
 
         public void button1_Click(object sender, EventArgs e)
         {
-            string DbPath = @" Y:\数字化课题\数据库\RevitData.db";
+
+            string f_path = @" Y:\数字化课题";
+
+
+            if (Directory.Exists(f_path) == false)
+            {
+                f_path = @"C:\ProgramData\Autodesk\Revit\Addins\2018";
+            }
+
             string section_name_string = Cmb_Section.SelectedItem.ToString();
             
-            using (SQLiteConnection conn = new SQLiteConnection("Data Source = " + DbPath))
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source = " + f_path + @"\数据库\RevitData.db"))
             {
                 conn.Open();
 
@@ -421,7 +441,45 @@ namespace TeklaStair
 
         private void Cmb_stair_type_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (Cmb_stair_type.Text.Contains("板式"))
+            {
+                Cmb_Section.Enabled = false;
+                Cmb_Section_type.Enabled = false;
 
+
+                string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                Directory.SetCurrentDirectory(exePath);
+                
+
+                Image Img_Plate = Image.FromFile(exePath+"\\Plate_Stair.png");
+                pictureBox1.Image = Img_Plate;
+
+                Refresh();
+
+
+            }
+            else
+            {
+                Cmb_Section.Enabled = true;
+                Cmb_Section_type.Enabled = true;
+
+                string exePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                Directory.SetCurrentDirectory(exePath);
+                
+                Image Img_Section = Image.FromFile(exePath + "\\Section_Stair.png");
+                pictureBox1.Image = Img_Section;
+                Refresh();
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cmb_Section_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cmb_Section.DataSource = SectionList.Where(s => s.StartsWith(Cmb_Section_type.Text.Substring(0,1))).ToList();
         }
     }
 }
