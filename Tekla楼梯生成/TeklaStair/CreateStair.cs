@@ -15,15 +15,19 @@ using Tekla.Structures.Catalogs;
 using System.Diagnostics;
 using System.Threading;
 using Tekla.Structures.Model;
+using Tekla.Structures.Geometry3d;
 using System.Collections;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Security.Cryptography;
-using Tekla.Structures.Geometry3d;
+
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Point = Tekla.Structures.Geometry3d.Point;
 using System.Drawing;
+using Tekla.Structures.Drawing;
+using Polygon = Tekla.Structures.Model.Polygon;
+using Vector = Tekla.Structures.Geometry3d.Vector;
 
 namespace TeklaStair
 {
@@ -130,7 +134,6 @@ namespace TeklaStair
 
 
 
-
                 #region 删除原始轴网
                 Model myModelGrid = new Model();
 
@@ -152,6 +155,9 @@ namespace TeklaStair
                 }
 
                 myModelGrid.CommitChanges();
+
+
+
 
 
                 #endregion
@@ -211,6 +217,23 @@ namespace TeklaStair
 
                 Model myModelPlate = new Model();
 
+
+
+                WorkPlaneHandler workPlaneHandler = myModelPlate.GetWorkPlaneHandler();
+                TransformationPlane currentPlane = workPlaneHandler.GetCurrentTransformationPlane();
+
+
+                Matrix transformationMatrix = currentPlane.TransformationMatrixToLocal;
+                Point origin = transformationMatrix.Transform(new Point(0, 0, 0));
+                Point axisX = transformationMatrix.Transform(new Point( 1, 0, 0));
+                Point axisY = transformationMatrix.Transform(new Point(0, 1, 0));
+
+                TransformationPlane oriPlane = new TransformationPlane(new CoordinateSystem(origin,new Vector( axisX- origin),new Vector(axisY- origin)));
+
+                workPlaneHandler.SetCurrentTransformationPlane(oriPlane);
+
+
+
                 string sqlPlate = "SELECT*FROM PlateInfo";
                 DataTable Platetable = getData(sqlPlate, cmd);
 
@@ -228,7 +251,7 @@ namespace TeklaStair
 
                     if (plate_name == "构造钢筋")
                     {
-                        Generate_Rebar(point_info, plate_thick, myModelPlate);
+                        //Generate_Rebar(point_info, plate_thick, myModelPlate);
                     }
                     else if (plate_name == "钢梁中心线")
                     {
@@ -240,6 +263,18 @@ namespace TeklaStair
                             Generate_fold_Plate(point_info, plate_thick, myModelPlate);
                         else
                             Generate_Plate(point_info, plate_thick, myModelPlate);
+                    }
+                    else if (plate_name == "底衬")
+                    {
+
+                    }
+                    else if (plate_name == "平台钢板")
+                    {
+
+                    }
+                    else if (plate_name == "平台悬挑")
+                    {
+
                     }
                     else
                     {
@@ -362,13 +397,54 @@ namespace TeklaStair
                 PXYZ_s.Add(new Point(x_coord, y_coord, z_coord));
             }
 
+            // Sort the points by Z coordinate in ascending order
+            PXYZ_s.Sort((p1, p2) => p1.Z.CompareTo(p2.Z));
+
+            // Get the point with the maximum Z coordinate
+            Point maxZPoint = PXYZ_s[2];
+            PXYZ_s.RemoveAt(2);
 
 
-            ContourPoint point1 = new ContourPoint(PXYZ_s[0],null);
-            ContourPoint point2 = new ContourPoint(PXYZ_s[1], null);
-            ContourPoint point3 = new ContourPoint(PXYZ_s[2], null);
+            Point foldPoint = PXYZ_s[1];
+            Point startPoint = PXYZ_s[0];
+
+            Vector vert_check = new Vector(foldPoint - maxZPoint);
+            if (vert_check.X > 1e-3)
+            {
+                foldPoint = PXYZ_s[0];
+                startPoint = PXYZ_s[0];
+            }
+
+           
+            ContourPoint point1 = new ContourPoint(startPoint,null);
+            ContourPoint point2 = new ContourPoint(foldPoint,null);
+            ContourPoint point3 = new ContourPoint(maxZPoint, null);
+
 
             PolyBeam PolyBeam = new PolyBeam();
+
+
+
+
+            //if (Math.Abs(PXYZ_s[0].Z- PXYZ_s[1].Z)<1e-3)
+            //{
+            //    point1 = new ContourPoint(PXYZ_s[2], null);
+            //    point2 = new ContourPoint(PXYZ_s[0], null);
+            //    point3 = new ContourPoint(PXYZ_s[1], null);
+
+            //}
+            //else
+            //{
+            //    point1 = new ContourPoint(PXYZ_s[0], null);
+            //    point2 = new ContourPoint(PXYZ_s[1], null);
+            //    point3 = new ContourPoint(PXYZ_s[2], null);
+            //    PolyBeam.Position.Rotation = Position.RotationEnum.BACK;
+            //    PolyBeam.Position.Plane = Position.PlaneEnum.LEFT;
+            //}
+
+
+
+
 
             PolyBeam.AddContourPoint(point1);
             PolyBeam.AddContourPoint(point2);
@@ -376,8 +452,9 @@ namespace TeklaStair
 
             PolyBeam.Profile.ProfileString = "PL"+p_len+"*"+plate_thick;
             PolyBeam.Material.MaterialString= "Q235B";
+
+            PolyBeam.Position.Rotation = Position.RotationEnum.BACK;
             PolyBeam.Position.Plane = Position.PlaneEnum.LEFT;
-            PolyBeam.Position.Rotation= Position.RotationEnum.BACK;
             PolyBeam.Position.Depth = Position.DepthEnum.FRONT;
             PolyBeam.Finish = "PAINT";
             bool Result = false;
@@ -481,5 +558,8 @@ namespace TeklaStair
         {
             Cmb_Section.DataSource = SectionList.Where(s => s.StartsWith(Cmb_Section_type.Text.Substring(0,1))).ToList();
         }
+
+
+
     }
 }
