@@ -38,13 +38,16 @@ namespace TeklaStair
             this.label3 = new System.Windows.Forms.Label();
             this.Cmb_Section_type = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CMB_DC = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(95, 374);
+            this.button1.Location = new System.Drawing.Point(85, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 29);
             this.button1.TabIndex = 0;
@@ -137,11 +140,44 @@ namespace TeklaStair
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(23, 354);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "调整梯梁截面";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(23, 399);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "截面类型";
+            // 
+            // CMB_DC
+            // 
+            this.CMB_DC.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CMB_DC.FormattingEnabled = true;
+            this.CMB_DC.Location = new System.Drawing.Point(133, 394);
+            this.CMB_DC.Name = "CMB_DC";
+            this.CMB_DC.Size = new System.Drawing.Size(172, 27);
+            this.CMB_DC.TabIndex = 11;
+            this.CMB_DC.SelectedIndexChanged += new System.EventHandler(this.CMB_DC_SelectedIndexChanged);
+            // 
             // CreateStair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 464);
+            this.ClientSize = new System.Drawing.Size(330, 550);
+            this.Controls.Add(this.CMB_DC);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Cmb_Section_type);
             this.Controls.Add(this.label3);
@@ -152,7 +188,7 @@ namespace TeklaStair
             this.Controls.Add(this.Cmb_Section);
             this.Controls.Add(this.button1);
             this.Name = "CreateStair";
-            this.Text = "生成楼梯深化模型 V3.1";
+            this.Text = "生成楼梯深化模型 V3.3";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,6 +206,9 @@ namespace TeklaStair
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox Cmb_Section_type;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox CMB_DC;
     }
 }
 
